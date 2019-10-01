@@ -21,11 +21,10 @@ public class ToDoServiceTest {
         toDoRepository.save(todoSample);
         ToDoService toDoService = new ToDoService(toDoRepository);
 
-        List<ToDo> toDoList = toDoService.findAll();
-        ToDo lastToDo = toDoList.get(toDoList.size()-1);
+        ToDo firstToDo = toDoService.findAll().get(0);
 
-        assertEquals(todoSample.getText(), lastToDo.getText());
-        assertEquals(todoSample.isCompleted(), lastToDo.isCompleted());
-        assertEquals(todoSample.getId(), lastToDo.getId());
+        assertEquals(todoSample.getText(), firstToDo .getText());
+        assertEquals(todoSample.isCompleted(), firstToDo .isCompleted());
+        assertEquals(todoSample.getId(), firstToDo .getId());
     }
 }
