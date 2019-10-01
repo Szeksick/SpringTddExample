@@ -14,6 +14,6 @@ public class ToDoService {
     }
 
     public List<ToDo> findAll() {
-        return new ArrayList<>();
+        return toDoRepository.findAll();
     }
 }
